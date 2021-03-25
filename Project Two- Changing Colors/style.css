@@ -1,0 +1,66 @@
+body{
+    font-family: 'Libre Baskerville', serif;
+}
+
+h1{
+    font-size: 50px;
+    text-align:center;
+    color:rgb(2, 8, 54)
+}
+
+.allButtons{
+    display:flex;
+    justify-content: center;
+}
+
+button{
+    border-radius: 2rem;
+    outline: none;
+    transition: 4s;
+    border: none;
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', serif;
+    background-color:rgb(234, 239, 240);
+}
+
+button:hover{
+    transition: 2s;
+}
+
+.buttonPink:hover{
+    background-color: #F3CFC6;
+}
+
+.buttonOrange:hover{
+    background-color: #F3CCB0;
+}
+
+.buttonBlue:hover{
+    background-color: #C5DCF8;
+}
+
+.buttonGreen:hover{
+    background-color: #DEFFE2;
+}
+
+.buttonPurple:hover{
+    background-color: #DCD4F8;
+}
+
+@media screen and (max-width:799px){
+    .allButtons{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    button{
+        width: 20rem;
+    }
+
+    h1{
+        font-size: 30px;
+        margin:3rem
+    }
+}
