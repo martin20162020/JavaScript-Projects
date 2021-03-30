@@ -1,0 +1,54 @@
+body{
+    background-color:#ece3d9;
+    color:#315361;
+    text-align:center;
+}
+
+h3{
+    font-size: 12px;
+    text-align: left;
+}
+
+.scores{
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+.scores p {
+    font-size: 30px;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.endResult{
+    font-size: 35px;
+    margin-bottom: 8rem;
+}
+
+.options{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+
+button{
+    font-size: 40px;
+    padding: 10px;
+    background-color:#ece3d9;
+    color:#315361;
+    border:none;
+    outline:none;
+    transition: .8s
+}
+
+button:hover{
+    background-color:#315361;
+    color:#ece3d9;
+    border-radius: 30px;
+    padding: 10px;
+    transition: 1s;
+}
