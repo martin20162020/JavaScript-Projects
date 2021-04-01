@@ -1,0 +1,12 @@
+body{
+    color:rgb(42, 68, 68);
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  #time{
+    display:flex;
+    justify-content:space-around;
+    margin: 5rem;
+    font-size: 90px;
+  }

@@ -4,17 +4,15 @@ const game = () => {
     let round = 1;
 
     let name = prompt("Lets play Rock, Paper Scissors! What is your name?");
-    document.querySelector(".playersName").textContent = name
+    document.querySelector(".playersName").textContent = name.charAt(0).toUpperCase() + name.slice(1);
     if (name == ""){
-        document.querySelector(".playersName").textContent = "Player 1"
+        name = document.querySelector(".playersName").textContent = "Player 1";
     }  
     
-
-
     updatedScore = () =>{
-        document.querySelector('.playersScore p').textContent = pScore
-        document.querySelector('.computersScore p').textContent = cScore
-        document.querySelector('.rounds').textContent = round
+        document.querySelector('.playersScore p').textContent = pScore;
+        document.querySelector('.computersScore p').textContent = cScore;
+        document.querySelector('.rounds').textContent = round;
     }
 
     gameStarted = () => {
@@ -23,47 +21,43 @@ const game = () => {
 
         categories.forEach(category => {
             category.addEventListener("click", function() {
-                let computer = computerOptions[Math.floor(Math.random() * computerOptions.length)]
-                playerVsComputer(this.textContent, computer)
+                let computer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+                playerVsComputer(this.textContent, computer);
             });
         });
     };
 
     playerVsComputer = (player, computer) => {
-        let winner = document.querySelector('.endResult')
-        if(player === computer){
-            round++, updatedScore()
-            return winner.textContent = "TIE!"
+        let pickings =  document.querySelector('.pickings');
+        let winner = document.querySelector('.endResult');
+        let finalPick = pickings.textContent = `${name} chose ${player} & Computer chose ${computer}`;
+
+        let playersWon = () =>{ winner.textContent = `${name} won!`, finalPick, round++, pScore++, updatedScore()};
+        let computersWon = () =>{winner.textContent = `Computer won!`, finalPick, round++, cScore++, updatedScore()};
+        let ties = () =>{winner.textContent = `TIE!`, finalPick, round++, updatedScore()};
+
+        if(player === computer){ 
+            return ties()
         } if (player === 'ROCK'){
-            round++
             if (computer === 'SCISSORS'){
-                winner.textContent = `Winner: ${name}!`
-                return pScore++, updatedScore()
+                return playersWon()
             } else {
-                winner.textContent = "Winner: Computer"
-                return cScore++, updatedScore()
+                return computersWon()
             }
         }if (player === 'PAPER'){
-            round++
             if (computer === 'ROCK'){
-                winner.textContent = `Winner: ${name}!`
-                return pScore++, updatedScore()
+                return playersWon()
             } else {
-                winner.textContent = "Winner: Computer"
-                return cScore++, updatedScore()
+                return computersWon()
             }
         }if (player === 'SCISSORS'){
-            round++
             if (computer === 'PAPER'){
-                winner.textContent = `Winner: ${name}!`
-                return pScore++, updatedScore()
+                return playersWon()
             } else {
-                winner.textContent = "Winner: Computer"
-                return cScore++, updatedScore()
+                return computersWon()
             }
         }
     }
     gameStarted()
 }
-
 game()
