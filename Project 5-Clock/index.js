@@ -1,8 +1,8 @@
 myTimer = () => {
     setInterval(function(){
-    const d = new Date();
-    const t = d.toLocaleTimeString();
-    document.getElementById("time").innerHTML = t;
+    let today = new Date();
+    let localTime = today.toLocaleTimeString();
+    document.getElementById("time").innerHTML = localTime;
 
 }, 1000)
 }
