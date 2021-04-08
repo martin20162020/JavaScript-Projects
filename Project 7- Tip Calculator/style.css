@@ -1,0 +1,105 @@
+body{
+    background-image: url(images/lemonandmint.jpg);
+    background-repeat: repeat-y;
+    background-position-x: right;
+    background-size: 300px 600px;
+    background-color: rgba(13, 32, 1, 0.836);
+}
+
+.tipCalculator{
+    margin-right: 250px;
+    text-align:center;
+    color:rgb(181, 187, 180);
+    font-size:25px;
+    text-shadow: 5px 5px 9px rgb(9, 22, 1);
+}
+
+h1{
+    margin-top: 200px;
+    font-size: 50px;
+}
+
+h2{
+    font-size:25px;  
+    font-weight:normal
+}
+
+input{
+    font-size: 20px;
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(14, 36, 1, 0.575);
+    outline:none;
+    width: 100px;
+    padding:5px;
+}
+
+input:hover{
+    border: 1px solid rgba(39, 102, 3, 0.918);
+    transition:1s;
+}
+
+/* BUTTON STYLING */
+
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+
+button{
+    border-radius: 5px;
+    padding:5px 10px;
+    background-color:rgba(14, 36, 1, 0.575);
+    color:rgb(181, 187, 180);
+    border: 1px solid rgba(14, 36, 1, 0.575);
+    margin: 20px;
+    font-size: 20px;
+    transition:1s;
+    outline:none;
+}
+
+button:hover{
+    transition:2s;
+    border: 1px solid rgb(23, 59, 2);
+    background-color:rgb(181, 187, 180);
+    color:rgb(23, 59, 2);
+    font-weight: bold;
+}
+
+#total{
+    font-size:30px;
+}
+
+/* 998 */
+
+@media screen and (min-width:1064px){
+    .tipCalculator{
+        transition:2s;
+        margin-right: 340px;
+    }
+}
+
+@media screen and (max-width:817px){
+    .tipCalculator{
+        transition:2s;
+        margin-right: 0px;
+        font-size:20px;
+    }
+
+    button{
+        font-size: 15px;
+        background-color:rgba(14, 36, 1, 0.815);
+    }
+
+    h1{
+        font-size:40px;
+    }
+
+    h2{
+        font-size:20px;  
+    }
+
+    #total{
+        font-size:25px;
+    }
+}
