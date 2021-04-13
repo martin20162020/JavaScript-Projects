@@ -1,42 +1,17 @@
-const tips = () =>{
-    const fifteenTip = document.querySelector("#fifteen");
-    const twentyTip = document.querySelector("#twenty");
-    const twentyFiveTip = document.querySelector("#twentyFive");
-    const noTip = document.querySelector("#noTip");
+const totalValue = document.querySelector("#total")
 
-    const totalValue = document.querySelector("#total");
-
-    fifteenTip.addEventListener("click", fifteenPercent = ()=> {
-        if ((document.querySelector("#tip").value === "")) {
-            totalValue.textContent = "NO VALUE GIVEN";
-        } else{
-            totalValue.textContent = `$${(parseInt(document.querySelector("#tip").value) * 1.15).toFixed(2)}`;
-        }
-    })
-
-    twentyTip.addEventListener("click", twentyPercent = () => {
-        if ((document.querySelector("#tip").value === "")) {
-            totalValue.textContent = "NO VALUE GIVEN";
-        } else{
-            totalValue.textContent = `$${(parseInt(document.querySelector("#tip").value) * 1.20).toFixed(2)}`;
-        }
-    })
-
-    twentyFiveTip.addEventListener("click", twentyFivePercent = () => {
-        if ((document.querySelector("#tip").value === "")){
-        totalValue.textContent = "NO VALUE GIVEN";
-        } else{
-        totalValue.textContent = `$${(parseInt(document.querySelector("#tip").value) * 1.25).toFixed(2)}`;
-        }
-    })
-
-    noTip.addEventListener("click", zeroPercent = () => {
-        if ((document.querySelector("#tip").value === "")){
-            totalValue.textContent = "NO VALUE GIVEN";
-        } else{
-            totalValue.textContent = `$${(parseInt(document.querySelector("#tip").value)).toFixed(2)}` ;     
-        }
-    })
+needAValue = () => {
+    if (document.querySelector("#tip").value === ""){
+        return totalValue.textContent = "NO VALUE GIVEN";
+    }
 }
 
-tips()
+usersInput = total => totalValue.textContent = `$${(parseInt(document.querySelector("#tip").value) * total).toFixed(2)}`
+
+document.querySelector("#fifteen").addEventListener("click", fifteenPercent = () => needAValue() || usersInput(1.15))
+
+document.querySelector("#twenty").addEventListener("click", twentyPercent = () => needAValue() || usersInput(1.20))
+
+document.querySelector("#twentyFive").addEventListener("click", twentyFivePercent = () => needAValue() || usersInput(1.25))
+
+document.querySelector("#noTip").addEventListener("click", zeroPercent = () => needAValue() || usersInput(1))
