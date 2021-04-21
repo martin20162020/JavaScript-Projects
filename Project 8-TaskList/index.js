@@ -40,20 +40,23 @@ const deleteAndCheckButtons = selectsTheButton =>{
 }
 
 const saveLocalTodos = task =>{
-    if(localStorage.getItem('oneTaskItemSelected') === null){
+    let taskItem;
+    if(localStorage.getItem("taskItem") === null){
         taskItem = [];
     } else{
-        taskItem = JSON.parse(localStorage.getItem('oneTaskItemSelected'));
+        taskItem = JSON.parse(localStorage.getItem("taskItem"));
     }
+
     taskItem.push(task);
-    localStorage.setItem('oneTaskItemSelected', JSON.stringify(taskItem));
+    localStorage.setItem("taskItem", JSON.stringify(taskItem));
 }
 
 const getIndividualTask = () =>{
-    if(localStorage.getItem('oneTaskItemSelected') === null){
+    let taskItem;
+    if(localStorage.getItem("taskItem") === null){
         taskItem = [];
     } else{
-        taskItem = JSON.parse(localStorage.getItem('oneTaskItemSelected'));
+        taskItem = JSON.parse(localStorage.getItem("taskItem"));
     }
     taskItem.forEach(function(todo){
         const tasksContainer = document.createElement('div');
@@ -79,15 +82,30 @@ const getIndividualTask = () =>{
 }
 
 let removeTaskFromLocalSession = individualTaskSelected =>{
-    if(localStorage.getItem('oneTaskItemSelected') === null){
+    let taskItem;
+    if(localStorage.getItem("taskItem") === null){
         taskItem = [];
     } else{
-        taskItem = JSON.parse(localStorage.getItem('oneTaskItemSelected'));
+        taskItem = JSON.parse(localStorage.getItem("taskItem"));
     }
     console.log(taskItem.splice(taskItem.indexOf(individualTaskSelected.children[0].innerText), 1));
-    localStorage.setItem('oneTaskItemSelected', JSON.stringify(taskItem));
+    localStorage.setItem("taskItem", JSON.stringify(taskItem));
 }
+
+const getData = () =>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => {
+        return response.json();
+    })
+    .then(responseData =>{
+        let object = JSON.stringify(responseData)
+        localStorage.setItem("objects", object)
+    })
+}
+
+getData()
 
 document.querySelector('.todo-button').addEventListener("click", addSingleTask);
 document.addEventListener('DOMContentLoaded', getIndividualTask);
 listOfTasks.addEventListener("click", deleteAndCheckButtons);
+
