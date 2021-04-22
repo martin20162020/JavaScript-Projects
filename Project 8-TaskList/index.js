@@ -92,18 +92,35 @@ let removeTaskFromLocalSession = individualTaskSelected =>{
     localStorage.setItem("taskItem", JSON.stringify(taskItem));
 }
 
+//Using Fetch 
+
+// const getData = () =>{
+//     fetch('https://jsonplaceholder.typicode.com/todos')
+//         .then(response => {
+//         return response.json();
+//     })
+//     .then(responseData =>{
+//         let object = JSON.stringify(responseData)
+//         localStorage.setItem("objects", object)
+//     })
+// }
+
+// getData()
+
+//Using Axios
+
 const getData = () =>{
-    fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => {
-        return response.json();
-    })
-    .then(responseData =>{
-        let object = JSON.stringify(responseData)
-        localStorage.setItem("objects", object)
-    })
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+    .then(res =>
+        JSON.stringify(res.data)
+    )
+    .then(res=> localStorage.setItem("Objects", res))
 }
 
 getData()
+
+// localStorage.clear()
+
 
 document.querySelector('.todo-button').addEventListener("click", addSingleTask);
 document.addEventListener('DOMContentLoaded', getIndividualTask);
