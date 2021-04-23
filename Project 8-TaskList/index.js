@@ -110,11 +110,11 @@ let removeTaskFromLocalSession = individualTaskSelected =>{
 //Using Axios
 
 const getData = () =>{
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-    .then(res =>
-        JSON.stringify(res.data)
-    )
-    .then(res=> localStorage.setItem("Objects", res))
+    axios.get('https://www.boredapi.com/api/activity')
+    .then(res => {
+        let newData = JSON.stringify(res.data);
+        localStorage.setItem("Objects", newData);
+    })
 }
 
 getData()
