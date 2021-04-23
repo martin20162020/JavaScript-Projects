@@ -111,10 +111,7 @@ let removeTaskFromLocalSession = individualTaskSelected =>{
 
 const getData = () =>{
     axios.get('https://www.boredapi.com/api/activity')
-    .then(res => {
-        let newData = JSON.stringify(res.data);
-        localStorage.setItem("Objects", newData);
-    })
+    .then(res => localStorage.setItem("Objects", JSON.stringify(res.data)))
 }
 
 getData()
