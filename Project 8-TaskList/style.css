@@ -59,7 +59,7 @@ input{
 
 input:hover{
     box-shadow: 1px 1px 4px 2px #d3e0ee;
-    transition: .5s
+    transition: .5s;
 }
 
 .todo-container{
@@ -150,7 +150,8 @@ button:hover{
     }
 
     .todo{
-        width: 25.5rem
+        width: 25.5rem;
+        height: 4rem;
     }
 
     body{
