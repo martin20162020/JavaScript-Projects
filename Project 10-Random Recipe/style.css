@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+    background-color: rgb(233, 230, 230);
+}
+
+h1{
+    text-align:center;
+}
+
+button{
+    border: .5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+button:hover{
+    background-color:rgb(43, 46, 85);
+    color: white;
+    transition: .5s;
+}
