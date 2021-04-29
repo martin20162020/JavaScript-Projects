@@ -1,21 +1,471 @@
 body{
     text-align: center;
-    background-color: rgb(233, 230, 230);
+    background-color: rgb(244, 248, 246);
+    color:rgb(29, 46, 29);
+    font-family: 'Merriweather', serif;
+    line-height: 2rem;
+    margin:0;
+    padding:0;
 }
 
-h1{
-    text-align:center;
+/* HEADER */
+
+/* NavBar */
+.navbar-brand{
+    padding-left: 1rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
+.navbar, 
+.fas
+{
+    background-color:rgb(71, 90, 71);
+    color: rgb(213, 219, 215);
+}
+
+/* header Content */
+.recipeSorter{
+    display:flex;
+    align-items:flex-end;
+    margin-left: 6rem;
+    margin-top:2rem;
+}
+.line{
+    text-align: left;
+    color:rgb(71, 90, 71);
+    font-weight: bold;
+}
+.content{
+    margin-bottom: 6rem;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.blurb{
+    width: 27rem;
+    color:rgb(88, 104, 88);
+    font-size:15px;
+}
+/* header Image */
+.headImage{
+    margin: 2rem 2rem 2rem 4rem;
+    height: 25rem;
+    width:18rem;
+}
+
+/* Button, Button Hover, Icons */
 button{
-    border: .5px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px;
+    border: 1.5px solid rgb(29, 46, 29);
+    border-radius: 50px;
+    padding:4px 10px;
+    letter-spacing: 2px;
+    transition: .5s;
+    margin-left:2rem;
+    background-color: rgb(241, 247, 246);
+    color:rgb(29, 46, 29);
+}
+button:hover .fas,
+button:hover span{
+    color: rgb(233, 230, 230);
+    transition: .5s;
+    font-size: 15px;
 }
 
 button:hover{
-    background-color:rgb(43, 46, 85);
-    color: white;
-    transition: .5s;
+    background-color:rgb(71, 90, 71);
+    box-shadow: 1px .5px 3px 1px rgb(71, 90, 71);
+    border-color: rgb(71, 90, 71);
+    color: rgb(213, 219, 215);
+}
+
+.bottom-icon{
+    position:absolute;
+    bottom:2rem;
+    right:4rem;
+    font-size: 25px;
+}
+
+.tooltip-wrap{
+    position:relative;
+}
+
+.tooltip-wrap .tooltip-content{
+    position:absolute;
+    color:rgb(213, 219, 215);
+    right:2rem;
+    bottom:3rem;
+    opacity:0;
+    transition:opacity .5s;
+}
+
+/* Titles */
+
+.staticTitles{
+    font-size:25px;
+    margin-top:3rem;
+    border-bottom: 2px solid rgb(100, 124, 100);
+    letter-spacing:2px;
+}
+
+#ingredientTitle{
+    margin-left:5rem;
+}
+
+.tooltip-wrap:hover .tooltip-content{
+    visibility: visible;
+    opacity:1
+}
+
+hr{
+    margin: 50px 50px 0px 50px;
+}
+
+/* Content Changing By Event Listener */
+
+/* Images */
+.changingImage{
+    height: 25rem;
+    float:left;
+    border-radius: 50%;
+    shape-outside: circle();
+    margin-right: 5rem;
+    margin-left: 3rem;
+    border: 5px solid rgb(100, 124, 100);
+    box-shadow: 1px .5px 3px 1px rgb(39, 48, 39);
+}
+
+.extra{
+    text-align: justify;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 1rem;
+}
+
+.listIngredients{
+    margin-top: 1rem;
+    transition:.5s;
+    margin-left: 5rem;
+    width:20rem;
+}
+
+.changingVideo{
+    margin-bottom: 6rem;
+    margin-top: 5.5rem;
+    height: 25rem;
+    width: 25rem;
+    margin-right:5rem;
+    border-radius: 10px;
+    border: 5px solid rgb(100, 124, 100);
+    box-shadow: 1px .5px 3px 1px rgb(39, 48, 39);  
+}
+
+.row-cols-2,
+.container{
+    margin-top:4rem;
+}
+
+h2{
+   padding-top: 2rem;
+   margin-top: 2rem;
+   font-size:50px;
+   letter-spacing: 1rem;
+   transition:1s
+}
+
+ul:hover{
+    font-size:17px;
+    transition:.5s;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+    text-align: left;
+    margin-left:2rem;
+}
+
+.recipeContainer{
+    background-color: rgb(71, 90, 71);
+    color:rgb(213, 219, 215);
+    margin:3rem;
+}
+.gridSection{
+    display:flex;
+    flex-direction: row;
+}
+
+footer{
+    margin-bottom: 1rem;
+    color: rgb(77, 119, 77);
+    font-weight:bold;
+}
+
+@media screen and (max-width:1042px){
+    h1{
+        margin-right:10rem;
+    }
+    .blurb{
+        width: 20rem;
+    }
+
+    .changingVideo{
+        margin-bottom: 6rem;
+        position:relative;
+        right:50px;
+        margin-right:0
+    }
+    h2{
+        font-size:45px;
+        letter-spacing: .5rem;
+        transition:1s
+     }
+
+}
+
+@media screen and (max-width: 900px){
+    .changingImage{
+        height: 20rem;
+        width: 20rem;
+        transition: .5s
+    }
+
+    .changingVideo{
+        height: 18rem;
+        width:20rem;
+        transition:.5s
+    }
+
+    .blurb{
+        width:280px;
+    }
+
+    .recipeSorter{
+        margin-left: 2rem;
+        transition:.4s
+    }
+}
+
+@media screen and (max-width: 850px){
+    .recipeSorter{
+        margin-left: 0rem;
+        transition:.4s
+    }
+    .container,
+    .row-cols-2{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .extra{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+    }
+
+    .changingVideo{
+        margin-bottom: 6rem;
+        margin-top: 3rem;
+        margin-left:5rem;
+    }
+    .changingImage{
+        margin-bottom:2rem;
+        transition: .5s;
+        margin-left:11rem;
+    }
+
+    .listIngredients{
+        margin-top: 1rem;
+        transition:.5s;
+        margin-left: 4rem;
+    }
+    #ingredientTitle{
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width: 833px){
+    .changingImage{
+        transition: .5s;
+        margin-left:9rem;
+    }
+
+    .listIngredients{
+        margin-top: 1rem;
+        transition:.5s;
+        margin-left: 4rem;
+        padding:0
+    }
+
+    .changingVideo{
+        margin-bottom: 6rem;
+        margin-top: 3rem;
+        margin-left:4rem;
+    }
+}
+
+@media screen and (max-width: 764px){
+    .recipeSorter{
+        transition:.4s
+    }
+
+    h1{
+        font-family:20px;
+    }
+    .content{
+        width: 50vw
+    }
+
+
+    .headImage{
+        position:relative;
+        height: 20rem;
+        width:15rem;
+    }
+
+    .blurb{
+        visibility:hidden;
+        position:absolute;
+    }
+
+    button{
+        padding:2px 8px;
+        letter-spacing: 0px;
+        transition: .5s;
+        margin-left:0rem;
+        margin-top:1rem;
+    }
+
+    .changingImage{
+        transition: .5s;
+        margin-left:6rem;
+    }
+
+    .changingVideo{
+        margin-bottom: 6rem;
+        margin-top: 3rem;
+        margin-left:4rem;
+    }
+    
+}
+
+@media screen and (max-width: 727px){
+    h1{
+        font-size: 30px;
+    }
+    .recipes{
+        margin-right:0;
+    }
+
+    .row-cols-2{
+        margin:0
+    }
+
+    .content{
+        width: 40vw
+    }
+    
+    hr{
+        margin-bottom:4rem;
+    }
+
+    .listIngredients{
+        transition:.5s;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .content{
+        width: 10vw;
+        margin-left: 0rem;
+    }
+
+    button{
+        transition: .5s;
+        margin-top:1rem;
+        width:25vw
+    }
+
+    .changingVideo{
+        margin-left:2rem;
+    }
+}
+
+@media screen and (max-width: 632px){
+    button{
+        transition: .5s;
+        width:18vw;
+        height:6vh;
+        font-size: 12px;
+        padding:0;
+        height:7vh;
+    }
+
+    .headImage{
+        visibility: hidden;
+        position:absolute;
+    }
+
+    .content{
+        margin-left:5rem;
+        margin-bottom:0
+    }
+
+    h1{
+        width:20rem;
+    }
+}
+
+@media screen and (max-width: 590px){
+    button{
+        transition: .5s;
+        height:6vh;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    .headImage{
+        width: 10rem;
+        height:18rem;
+    }
+    .changingImage{
+        margin-bottom:2rem;
+        transition: .5s;
+        margin-left:3rem;
+    }
+    .changingVideo{
+        margin-left:2rem;
+        height:15rem;
+        width:15rem
+    }
+    .listIngredients{
+        transition:.5s;
+        margin-left: 0rem;
+    }
+    h2{
+        font-size:30px;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .changingImage{
+        margin-bottom:2rem;
+        transition: .5s;
+        margin-left:7rem;
+        height:10rem;
+        width:10rem;
+    }
+    .changingVideo{
+        transition: .5s;
+        margin-left:1rem;
+    }
+    .listIngredients{
+        transition:.5s;
+        margin-left: 0rem;
+    }
 }
