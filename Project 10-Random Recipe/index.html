@@ -23,41 +23,48 @@
         <header>
             <nav class="navbar" id="top">
                 <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1"><i class="fas fa-glass-cheers"></i> Discover New Recipes</span>
+                    <span class="navbar-brand mb-0 h1"><i class="fas fa-glass-cheers"></i> Discover New Recipes</span>
                 </div>
             </nav>
         </header>
 
         <section class="recipeSorter">
             <img src="headerImage.jpg" class="headImage">
+            
             <div class="content">
                 <span class="line">___</span>
                 <h1>An Assortment of Recipes</h1>
                 <p class="blurb">Click on the button below to discover new recipes. Below are videos, photos, and instructions on how to cook each dish.</p>
                 <button>Start Cooking</button>
             </div>
+
         </section>
         
         <section class="recipeContainer">
             <h2 class="recipes"></h2>
+            
             <div class="container clearfix">
                 <div class="col"><img class="changingImage"></div>
                 <div class="col"><span class="staticTitles">Instructions</span><p class="extra"></p></div>
-              </div>
-              <hr>
-              <div class="row row-cols-2">
+            </div>
+            
+            <hr>
+            
+            <div class="row row-cols-2">
                 <div class="col"><span class="staticTitles" id="ingredientTitle">Ingredients</span><ul class="listIngredients"></ul></div>
                 <div class="col"><iframe class="changingVideo" alt="Unavailable Video"></iframe></div>
-              </div>
-              <div class="tooltip-wrap">
+            </div>
+            
+            <div class="tooltip-wrap">
                 <a href="#top"><i class="fas fa-glass-cheers bottom-icon"></i></a>
                 <div class="tooltip-content">
                     <p>Scroll to the Top</p>
                 </div>
-              </div>
+            </div>
         </section>
-        <!-- <i class="fas fa-glass-cheers bottom-icon"></i> -->
+
         <footer>This website used TheMealDB </footer>
+
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="index.js"></script>
 
